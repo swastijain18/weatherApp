@@ -4,22 +4,23 @@ import { AiFillCloud } from "react-icons/ai"
 import { BsSearch } from "react-icons/bs"
 
 function App() {
-  const [detail, setDetail] = useState(null);
-  const [search, setSearch] = useState("Delhi");
-  const [city, setCity] = useState(search);
+  const [detail, setDetail] = useState(null);  // to store the fetch data from api
+  const [search, setSearch] = useState("Delhi"); // to save the location name
+
+  const [city, setCity] = useState(search);  // to store entered location temporary 
 
   const date = new Date();
 
-  // useEffect(() => {
-  //   const fetchApi = async () => {
-  //     const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=316cb9c484e10d250e45f407423f3da0`)
-  //     const resJ = await res.json();
-  //     // console.log(resJ);
+  useEffect(() => {
+    const fetchApi = async () => {
+      const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=316cb9c484e10d250e45f407423f3da0`)
+      const resJ = await res.json();
+      // console.log(resJ);
 
-  //     setDetail(resJ);
-  //   };
-  //   fetchApi();
-  // }, [search]);
+      setDetail(resJ);
+    };
+    fetchApi();
+  }, [search]);
 
   return (
     <div className='main'>

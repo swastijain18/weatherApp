@@ -13,6 +13,7 @@
 
   padding: 1rem 0rem;
 }
+
 .my-box{
   border-radius: 1rem;
   padding: 1.5rem;
@@ -20,6 +21,7 @@
   height: auto;
   margin-right: 2rem;
   box-shadow: rgba(119, 128, 137, 0.2) 0px 8px 24px;
+
 }
 .searchbtn{
   background: none;
@@ -66,10 +68,13 @@
 @media only screen and (max-width: 600px)  {
   .my-box{
     width: 80%;
-    
+    margin: auto;  
   }
   .place{
     position: relative;
     bottom: 0rem;
+  }
+  .right-box{
+    margin-top: 1rem;
   }
 }
